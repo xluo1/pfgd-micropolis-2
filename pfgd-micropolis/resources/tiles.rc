@@ -1014,7 +1014,7 @@
 961   townhall@0,2144  (conducts)(bulldozable)
 962   townhall@0,2160  (conducts)(bulldozable)
 963   townhall@0,2176  (conducts)(bulldozable)
-964   townhall@0,2192  (conducts)(bulldozable)
+964   townhall@0,2192  (zone)(conducts)(bulldozable)(building=3x3)(behavior=TOWNHALL)
 965   townhall@0,2208  (conducts)(bulldozable)
 966   townhall@0,2224  (conducts)(bulldozable)
 967   townhall@0,2240  (conducts)(bulldozable)

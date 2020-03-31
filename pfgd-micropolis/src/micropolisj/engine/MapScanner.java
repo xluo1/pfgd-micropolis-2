@@ -41,7 +41,8 @@ class MapScanner extends TileBehavior
 		STADIUM_EMPTY,
 		STADIUM_FULL,
 		AIRPORT,
-		SEAPORT;
+		SEAPORT,
+		TOWNHALL;
 	}
 
 	@Override
@@ -83,6 +84,9 @@ class MapScanner extends TileBehavior
 			return;
 		case SEAPORT:
 			doSeaport();
+			return;
+		case TOWNHALL:
+			doTownhall();
 			return;
 		default:
 			assert false;
@@ -310,6 +314,13 @@ class MapScanner extends TileBehavior
 		if (powerOn && !city.hasSprite(SpriteKind.SHI)) {
 			city.generateShip();
 		}
+	}
+	
+	void doTownhall()
+	{
+		/**
+		 * TODO: DO SOMETHING
+		 */
 	}
 
 	/**
