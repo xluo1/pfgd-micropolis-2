@@ -86,7 +86,9 @@ public class Micropolis
 	public int [][] fireRate;       //firestations reach- used for overlay graphs
 	int [][] policeMap;      //police stations- cleared and rebuilt each sim cycle
 	public int [][] policeMapEffect;//police stations reach- used for overlay graphs
-
+	int [][] townHallMap;      //townhalls- cleared and rebuilt each sim cycle
+	ArrayList<int[]> townHallList =  new ArrayList<int[]>();
+	
 	/** For each 8x8 section of city, this is an integer between 0 and 64,
 	 * with higher numbers being closer to the center of the city. */
 	int [][] comRate;
@@ -125,6 +127,7 @@ public class Micropolis
 	int nuclearCount;
 	int seaportCount;
 	int airportCount;
+	int townhallCount;
 
 	int totalPop;
 	int lastCityPop;
@@ -243,6 +246,8 @@ public class Micropolis
 		rateOGMem = new int[smY][smX];
 		fireStMap = new int[smY][smX];
 		policeMap = new int[smY][smX];
+		townHallMap = new int[height][width]; // this map is bigger than other maps
+		
 		policeMapEffect = new int[smY][smX];
 		fireRate = new int[smY][smX];
 		comRate = new int[smY][smX];
@@ -538,6 +543,7 @@ public class Micropolis
 		nuclearCount = 0;
 		seaportCount = 0;
 		airportCount = 0;
+		townhallCount = 0;
 		powerPlants.clear();
 
 		for (int y = 0; y < fireStMap.length; y++) {
@@ -546,6 +552,17 @@ public class Micropolis
 				//policeMap[y][x] = 0;
 			}
 		}
+		
+		for (int y = 0; y < townHallMap.length; y++) {
+			for (int x = 0; x < townHallMap[y].length; x++) {
+				townHallMap[y][x] = 0;
+				// clear town hall map
+			}
+		}
+		
+		// clear townhalllist
+		townHallList.clear();
+		
 	}
 
 	void simulate(int mod16)
@@ -1432,15 +1449,77 @@ public class Micropolis
 	{
 		assert x >= 0 && x <= getWidth()/2;
 		assert y >= 0 && y <= getHeight()/2;
-
-		int xdis = Math.abs(x - centerMassX/2);
-		int ydis = Math.abs(y - centerMassY/2);
-
-		int z = (xdis + ydis);
-		if (z > 32)
-			return 32;
-		else
-			return z;
+		
+		// if town hall list empty do this:
+		if (townHallList.isEmpty()) {
+			int xdis = Math.abs(x - centerMassX/2);
+			int ydis = Math.abs(y - centerMassY/2);
+	
+			int z = (xdis + ydis);
+			if (z > 32)
+				return 32;
+			else
+				//DEBUGGING
+				//System.out.print("no town hall");
+				//System.out.print("x:");
+				//System.out.print(x);
+				//System.out.print("y:");
+				//System.out.print(y);
+				//System.out.print("dis");
+				//System.out.print(z);
+				//System.out.print("-----");
+				return z;
+			
+			
+		} else {
+			// if town hall list not empty do this
+			// store lowest distance
+			// loop through all elements of town hall list 
+			// return lowest distance to any town hall
+	
+		
+			
+			int lowestDis = 32;
+			int xdis = 32;
+			int ydis = 32;
+			int[] coords;
+	
+		
+			
+			for (int i=0 ; i < townHallList.size(); i++) {
+				coords = townHallList.get(i);
+				xdis = Math.abs(x - coords[0])-2; 
+				ydis = Math.abs(y - coords[1])-2;
+				// -2 because coords is at center of town hall
+				// Subtracting 2 gives buildings at the edge of town hall distance = 0
+				
+				
+				//compare
+				if (xdis+ydis < lowestDis) {
+					lowestDis = (xdis + ydis);
+				}
+			}
+			
+			if (lowestDis > 32)
+				return 32;
+			else
+				//DEBUGGING
+				//System.out.print("yes town hall");
+				//System.out.print("town hall x:");
+				//System.out.print(townHallList.get(0)[0]);
+				//System.out.print("townhally:");
+				//System.out.print(townHallList.get(0)[1]);
+				//System.out.print("x:");
+				//System.out.print(x);
+				//System.out.print("y:");
+				//System.out.print(y);
+				//System.out.print("dis");
+				//System.out.print(lowestDis);
+				//System.out.print("-----");
+				return lowestDis;
+		}
+		
+		
 	}
 
 	Map<String,TileBehavior> tileBehaviors;

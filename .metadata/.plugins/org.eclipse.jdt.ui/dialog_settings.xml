@@ -15,11 +15,11 @@
 	<section name="JavaSearchPage">
 		<item key="CASE_SENSITIVE" value="false"/>
 		<item key="INCLUDE_MASK" value="11"/>
-		<item key="HISTORY_SIZE" value="10"/>
+		<item key="HISTORY_SIZE" value="11"/>
 		<section name="HISTORY0">
 			<item key="searchFor" value="1"/>
 			<item key="scope" value="0"/>
-			<item key="pattern" value="police"/>
+			<item key="pattern" value="100000"/>
 			<item key="limitTo" value="2"/>
 			<item key="matchLocations" value="0"/>
 			<item key="javaElement" value=""/>
@@ -31,7 +31,7 @@
 		<section name="HISTORY1">
 			<item key="searchFor" value="1"/>
 			<item key="scope" value="0"/>
-			<item key="pattern" value="mapscan()"/>
+			<item key="pattern" value="police"/>
 			<item key="limitTo" value="2"/>
 			<item key="matchLocations" value="0"/>
 			<item key="javaElement" value=""/>
@@ -41,9 +41,9 @@
 			</list>
 		</section>
 		<section name="HISTORY2">
-			<item key="searchFor" value="4"/>
+			<item key="searchFor" value="1"/>
 			<item key="scope" value="0"/>
-			<item key="pattern" value="landvaluemem"/>
+			<item key="pattern" value="mapscan()"/>
 			<item key="limitTo" value="2"/>
 			<item key="matchLocations" value="0"/>
 			<item key="javaElement" value=""/>
@@ -55,7 +55,7 @@
 		<section name="HISTORY3">
 			<item key="searchFor" value="4"/>
 			<item key="scope" value="0"/>
-			<item key="pattern" value="water"/>
+			<item key="pattern" value="landvaluemem"/>
 			<item key="limitTo" value="2"/>
 			<item key="matchLocations" value="0"/>
 			<item key="javaElement" value=""/>
@@ -65,9 +65,9 @@
 			</list>
 		</section>
 		<section name="HISTORY4">
-			<item key="searchFor" value="0"/>
+			<item key="searchFor" value="4"/>
 			<item key="scope" value="0"/>
-			<item key="pattern" value="roadliketool"/>
+			<item key="pattern" value="water"/>
 			<item key="limitTo" value="2"/>
 			<item key="matchLocations" value="0"/>
 			<item key="javaElement" value=""/>
@@ -79,7 +79,7 @@
 		<section name="HISTORY5">
 			<item key="searchFor" value="0"/>
 			<item key="scope" value="0"/>
-			<item key="pattern" value="cost"/>
+			<item key="pattern" value="roadliketool"/>
 			<item key="limitTo" value="2"/>
 			<item key="matchLocations" value="0"/>
 			<item key="javaElement" value=""/>
@@ -91,7 +91,7 @@
 		<section name="HISTORY6">
 			<item key="searchFor" value="0"/>
 			<item key="scope" value="0"/>
-			<item key="pattern" value="isriveredge"/>
+			<item key="pattern" value="cost"/>
 			<item key="limitTo" value="2"/>
 			<item key="matchLocations" value="0"/>
 			<item key="javaElement" value=""/>
@@ -103,7 +103,7 @@
 		<section name="HISTORY7">
 			<item key="searchFor" value="0"/>
 			<item key="scope" value="0"/>
-			<item key="pattern" value="flood"/>
+			<item key="pattern" value="isriveredge"/>
 			<item key="limitTo" value="2"/>
 			<item key="matchLocations" value="0"/>
 			<item key="javaElement" value=""/>
@@ -115,7 +115,7 @@
 		<section name="HISTORY8">
 			<item key="searchFor" value="0"/>
 			<item key="scope" value="0"/>
-			<item key="pattern" value="rubble"/>
+			<item key="pattern" value="flood"/>
 			<item key="limitTo" value="2"/>
 			<item key="matchLocations" value="0"/>
 			<item key="javaElement" value=""/>
@@ -125,6 +125,18 @@
 			</list>
 		</section>
 		<section name="HISTORY9">
+			<item key="searchFor" value="0"/>
+			<item key="scope" value="0"/>
+			<item key="pattern" value="rubble"/>
+			<item key="limitTo" value="2"/>
+			<item key="matchLocations" value="0"/>
+			<item key="javaElement" value=""/>
+			<item key="isCaseSensitive" value="false"/>
+			<item key="includeMask" value="11"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY10">
 			<item key="searchFor" value="0"/>
 			<item key="scope" value="0"/>
 			<item key="pattern" value="RUBBLE"/>

@@ -30,7 +30,7 @@ public enum MicropolisTool
 	NUCLEAR(4, 5000),
 	AIRPORT(6, 10000),
 	QUERY(1, 0),
-	TOWNHALL(1, 100000);
+	TOWNHALL(3, 1); //town hall cost CHANGE LATER
 
 	int size;
 	int cost;

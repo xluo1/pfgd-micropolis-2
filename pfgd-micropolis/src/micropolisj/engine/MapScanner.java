@@ -318,9 +318,20 @@ class MapScanner extends TileBehavior
 	
 	void doTownhall()
 	{
-		/**
-		 * TODO: DO SOMETHING
-		 */
+		// Add coordinates to list of town hall to calculate distance in GetDisCC()
+		
+		checkZonePower(); // turns off no power icon
+		city.townhallCount++;
+		/** no map effect **/
+		city.townHallMap[ypos][xpos] = 1;
+		/** add to list **/
+		int [] newCoords = new int[2];
+		newCoords[0] = xpos;
+		newCoords[1] = ypos;
+		city.townHallList.add(newCoords);
+		
+		
+		
 	}
 
 	/**
